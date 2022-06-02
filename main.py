@@ -2,23 +2,23 @@ from models import Laptop, Phone, TV
 import receipts
 import utils
 
-rec = dict()
+
 
 tasc = Phone(1, 1, 1)
 buf = receipts.Receipts("Будич", 'Илья', 'Олегович', tasc)
-rec[buf.receiptNumber] = buf
+utils.rec[buf.receiptNumber] = buf
 tasc = Phone(2, 2, 2)
 buf = receipts.Receipts('Будич', 'Илья', 'Олегович', tasc)
-rec[buf.receiptNumber] = buf
+utils.rec[buf.receiptNumber] = buf
 tasc = Phone(3, 3, 3)
 buf = receipts.Receipts('Бобрик', 'Михаиль', 'Михайлович', tasc)
-rec[buf.receiptNumber] = buf
+utils.rec[buf.receiptNumber] = buf
 tasc = Phone(7, 7, 7)
 buf = receipts.Receipts('Петров', 'Пётар', 'Петрович', tasc)
-rec[buf.receiptNumber] = buf
+utils.rec[buf.receiptNumber] = buf
 tasc = Phone(7, 7, 7)
 buf = receipts.Receipts('Бобрик', 'Пётар', 'Олегович', tasc)
-rec[buf.receiptNumber] = buf
+utils.rec[buf.receiptNumber] = buf
 
 while True:
     print("1-сдать в ремонт")
@@ -51,7 +51,7 @@ while True:
             tasc = TV(nameModel, diagonal, description)
 
         buf = receipts.Receipts(surname, name, patronymic, tasc)
-        rec[buf.receiptNumber] = buf
+        utils.rec[buf.receiptNumber] = buf
 
     elif i == 2:
 
@@ -60,17 +60,20 @@ while True:
         i = utils.getNumber(1, 3)
         if i == 1:
             
+            print("Поиск по номеру квитанции")
             receiptNumber = utils.getNumber(1, 99999)
-            if receiptNumber in rec:
-                print(rec[receiptNumber])
+            if receiptNumber in utils.rec:
+                print(utils.rec[receiptNumber])
             else:
                 print("чек не найден")
 
         elif i == 2:
             
+            print("Поиск по ФИО")
             surname = input("Введите фамилию: ")
             name = input("Введите имя: ")
             patronymic = input("Введите очество: ")
-            for receipts in rec.values():
-                if receipts.fio == surname + " " + name + " " + patronymic:
+            for receipts in utils.rec.values():
+                if receipts.fio == f"{surname} {name} {patronymic}":
                     print(receipts)
+                    

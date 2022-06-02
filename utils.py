@@ -1,3 +1,5 @@
+rec = dict()
+
 
 def getNumber(min=0, max=1000000):
     while True:
