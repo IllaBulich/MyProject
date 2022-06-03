@@ -2,24 +2,6 @@ from models import Laptop, Phone, TV
 import receipts
 import utils
 
-
-
-tasc = Phone(1, 1, 1)
-buf = receipts.Receipts("Будич", 'Илья', 'Олегович', tasc)
-utils.rec[buf.receiptNumber] = buf
-tasc = Phone(2, 2, 2)
-buf = receipts.Receipts('Будич', 'Илья', 'Олегович', tasc)
-utils.rec[buf.receiptNumber] = buf
-tasc = Phone(3, 3, 3)
-buf = receipts.Receipts('Бобрик', 'Михаиль', 'Михайлович', tasc)
-utils.rec[buf.receiptNumber] = buf
-tasc = Phone(7, 7, 7)
-buf = receipts.Receipts('Петров', 'Пётар', 'Петрович', tasc)
-utils.rec[buf.receiptNumber] = buf
-tasc = Phone(7, 7, 7)
-buf = receipts.Receipts('Бобрик', 'Пётар', 'Олегович', tasc)
-utils.rec[buf.receiptNumber] = buf
-
 while True:
     print("1-сдать в ремонт")
     print("2-просмотреть информацию")
