@@ -23,3 +23,6 @@ class Receipts:
         return self.__fio
 
 
+    @property
+    def receiptNumber(self):
+        return self.__receiptNumber
