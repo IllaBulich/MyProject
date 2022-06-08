@@ -1,4 +1,8 @@
+"""System module."""
+
+
 class Model:
+    """A dummy docstring."""
 
     def __init__(self, name, description):
         self.__name = name
@@ -6,24 +10,30 @@ class Model:
 
     @property
     def name(self):
+        """A dummy docstring."""
         return self.__name
 
     @property
     def description(self):
+        """A dummy docstring."""
         return self.__description
 
 
 class Phone(Model):
+    """A dummy docstring."""
 
     def __init__(self, name, os, description):
         super().__init__(name, description)
         self.__os = os
 
     def __str__(self):
-        return F"марка {super().name}\nоперационная система {self.__os}\nописание поломки:\n{super().description}"
+        str1=f"марка {super().name}\nоперационная система {self.__os}\n"
+        str2=f"описание поломки:\n{super().description}"
+        return str1 + str2
 
 
 class Laptop(Model):
+    """A dummy docstring."""
 
     def __init__(self, name, os, release, description):
         super().__init__(name, description)
@@ -31,17 +41,22 @@ class Laptop(Model):
         self.__release = release
 
     def __str__(self):
-        return F"марка {super().name}\nоперационная система {self.__os}\nгод выпуска {self.__release}\nописание поломки:\n{super().description}"
+        str1 = f"марка {super().name}\nоперационная система {self.__os}\n"
+        str2 = f"год выпуска {self.__release}\nописание поломки:\n{super().description}"
+        return str1 + str2
 
 
 class TV(Model):
+    """A dummy docstring."""
 
     def __init__(self, name, diagonal, description):
         super().__init__(name, description)
         self.__diagonal = diagonal
 
     def __str__(self):
-        return F"марка {super().name}\nдиагональ экрана {self.__diagonal}\nописание поломки:\n{super().description}"
+        str1 = f"марка {super().name}\nдиагональ экрана {self.__diagonal}\n"
+        str2 = f"описание поломки:\n{super().description}"
+        return str1 + str2
 
 
 tasc = Laptop("nameModel", " os", "release", " description")
