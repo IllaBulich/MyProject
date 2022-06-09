@@ -1,9 +1,9 @@
 """System module."""
 import datetime
-from models import Laptop, Phone, TV
-import receipts
 import utils
-import user
+from models import Laptop, Phone, TV
+from receipts import Receipts
+from user import User
 
 while True:
     print("1-сдать в ремонт")
@@ -37,7 +37,7 @@ while True:
             description = input("Опесание неисправности: ")
             tasc = TV(nameModel, diagonal, description)
 
-        buf = receipts.Receipts(surname, name, patronymic, tasc)
+        buf = Receipts(surname, name, patronymic, tasc)
         utils.rec[buf.receipt_number] = buf
 
     elif i == 2:
@@ -68,7 +68,7 @@ while True:
     elif i == 3:
         login = input("Введите логин: ")
         password = input("Введите пароль: ")
-        if user.User.login_user(login, password):
+        if User.login_user(login, password):
             while True:
                 print("1-Действия с админами")
                 print("2-Действия с квитанциями")
@@ -94,10 +94,11 @@ while True:
                         elif i == 2:
                             login = input("Введите логин: ")
                             password = input("Введите пароль: ")
-                            buf = user.User(login, password)
+                            buf = User(login, password)
                             utils.user_list[buf.loginio] = buf
 
                         elif i == 3:
+                            utils.user_list_seve()
                             break
 
                 elif i == 2:
@@ -128,6 +129,7 @@ while True:
                                     print('Invalid date!')
 
                             elif i == 3:
+                                utils.rec_seve()
                                 break
 
                     else:
@@ -140,4 +142,5 @@ while True:
             print("неверный логин или пароль")
 
     elif i == 4:
+        utils.rec_seve()
         break
