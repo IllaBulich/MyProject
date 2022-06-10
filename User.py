@@ -21,7 +21,7 @@ class User:
     @staticmethod
     def login_user(login, password):
         """A dummy docstring."""
-        for key in utils.user_list.items():
+        for key in utils.user_list:
             if key == login and utils.user_list[key].examination(
                     login, password):
                 return 1
