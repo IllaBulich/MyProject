@@ -3,7 +3,7 @@ import datetime
 from models import Laptop, Phone, TV
 import receipts
 import utils
-import user
+import User
 
 while True:
     print("1-сдать в ремонт")
@@ -68,7 +68,7 @@ while True:
     elif i == 3:
         login = input("Введите логин: ")
         password = input("Введите пароль: ")
-        if user.User.login_user(login, password):
+        if User.User.login_user(login, password):
             while True:
                 print("1-Действия с админами")
                 print("2-Действия с квитанциями")
@@ -94,7 +94,7 @@ while True:
                         elif i == 2:
                             login = input("Введите логин: ")
                             password = input("Введите пароль: ")
-                            buf = user.User(login, password)
+                            buf = User.User(login, password)
                             utils.user_list[buf.loginio] = buf
 
                         elif i == 3:

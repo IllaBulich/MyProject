@@ -1,7 +1,7 @@
 """System module."""
 from models import Phone
 import receipts
-import user
+import User
 
 rec = {}
 user_list = {}
@@ -22,11 +22,11 @@ tasc = Phone(7, 7, 7)
 buf = receipts.Receipts('Бобрик', 'Пётар', 'Олегович', tasc)
 rec[buf.receipt_number] = buf
 
-buf = user.User("admin", "admin")
+buf = User.User("admin", "admin")
 user_list[buf.loginio] = buf
-buf = user.User("user", "1234")
+buf = User.User("user", "1234")
 user_list[buf.loginio] = buf
-buf = user.User("likol", "likol")
+buf = User.User("likol", "likol")
 user_list[buf.loginio] = buf
 
 
