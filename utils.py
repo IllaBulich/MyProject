@@ -4,8 +4,10 @@ import pickle
 FILENAME1 = "Receipts.dat"
 FILENAME2 = "User.dat"
 
+
 rec = {}
 user_list = {}
+
 
 with open(FILENAME1, "rb") as file:
     rec = pickle.load(file)
@@ -23,6 +25,7 @@ def user_list_seve():
     """A dummy docstring."""
     with open(FILENAME2, "wb") as file:
         pickle.dump(user_list, file)
+
 
 
 def get_number(_min=0, _max=1000000):
