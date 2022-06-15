@@ -5,7 +5,6 @@ from models import Laptop, Phone, TV
 from receipts import Receipts
 import User
 
-
 while True:
     print("1-сдать в ремонт")
     print("2-просмотреть информацию")
